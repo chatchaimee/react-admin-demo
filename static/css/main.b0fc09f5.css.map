@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,KACC,SACA,UACA,sBAAwB,CAGzB,OACC,gBACA,oBAAuB","file":"static/css/main.b0fc09f5.css","sourcesContent":["body {\n\tmargin: 0;\n\tpadding: 0;\n\tfont-family: sans-serif;\n}\n\ncanvas {\n\tmargin-top: 20px;\n\twidth: 100% !important;\n}\n\n\n\n// WEBPACK FOOTER //\n// ./src/index.css"],"sourceRoot":""}
