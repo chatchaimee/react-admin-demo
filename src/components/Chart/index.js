@@ -24,38 +24,14 @@ const Layout = props => {
 	);
 };
 
-const LineChart = props => {
-	return (
-		<Layout {...props}>
-			<Line data={props.data} options={props.options} />
-		</Layout>
-	);
-};
-
-const BarChart = props => {
-	return (
-		<Layout {...props}>
-			<Bar data={props.data} options={props.options} />
-		</Layout>
-	);
-};
-
-const PieChart = props => {
-	return (
-		<Layout {...props}>
-			<Pie data={props.data} options={props.options} />
-		</Layout>
-	);
-};
-
 const RenderChart = props => {
 	switch (props.type) {
 		case 'line':
-			return <LineChart {...props} />;
+			return <Line data={props.data} options={props.options} />;
 		case 'bar':
-			return <BarChart {...props} />;
+			return <Bar data={props.data} options={props.options} />;
 		case 'pie':
-			return <PieChart {...props} />;
+			return <Pie data={props.data} options={props.options} />;
 		default:
 			return <Fragment />;
 	}
@@ -182,9 +158,21 @@ class ChartComponent extends Component {
 
 		return (
 			<Responsive
-				xsmall={<RenderChart data={data} {...this.props} />}
-				small={<RenderChart data={data} {...this.props} />}
-				medium={<RenderChart data={data} {...this.props} />}
+				xsmall={
+					<Layout {...this.props}>
+						<RenderChart data={data} {...this.props} />
+					</Layout>
+				}
+				small={
+					<Layout {...this.props}>
+						<RenderChart data={data} {...this.props} />
+					</Layout>
+				}
+				medium={
+					<Layout {...this.props}>
+						<RenderChart data={data} {...this.props} />
+					</Layout>
+				}
 			/>
 		);
 	}
